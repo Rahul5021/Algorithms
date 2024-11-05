@@ -4,7 +4,7 @@ This folder contains an implementation of Simple Linear Regression, a basic mach
 
 ## Overview
 
-**Simple Linear Regression** is used to predict the value of a dependent variable \( y \) based on the value of an independent variable \( x \). The model fits a straight line through data points using the **Least Squares Method**, which minimizes the sum of squared differences between observed and predicted values.
+**Simple Linear Regression** is used to predict the value of a dependent variable $y$ based on the value of an independent variable $x$. The model fits a straight line through data points using the **Least Squares Method**, which minimizes the sum of squared differences between observed and predicted values.
 
 ### Formula
 
@@ -15,14 +15,14 @@ y = mx + c
 $$
 
 where:
-- \( m \): Slope of the line
-- \( c \): y-intercept
-- \( x \): Input feature (independent variable)
-- \( y \): Predicted output (dependent variable)
+- $m$: Slope of the line
+- $c$: y-intercept
+- $x$: Input feature (independent variable)
+- $y$: Predicted output (dependent variable)
 
-#### Slope Calculation (\( m \))
+#### Slope Calculation ($m$)
 
-The slope \( m \) is calculated as:
+The slope $m$ is calculated as:
 
 $$
 m = \frac{\sum (X_i - \bar{X})(y_i - \bar{y})}{\sum (X_i - \bar{X})^2}
@@ -32,9 +32,9 @@ where $X_i$ and $y_i$ are individual values from the independent and dependent v
 
 
 
-#### Intercept Calculation (\( c \))
+#### Intercept Calculation ($c$)
 
-The intercept \( c \) is calculated as:
+The intercept $c$ is calculated as:
 
 $$
 c = \bar{y} - m \cdot \bar{X}
