@@ -28,7 +28,8 @@ $$
 m = \frac{\sum (X_i - \bar{X})(y_i - \bar{y})}{\sum (X_i - \bar{X})^2}
 $$
 
-where $ \( X_i \) $ and $ \( y_i \) $ are individual values from the independent and dependent variable data, and $ \( \bar{X} \) $ and $ \( \bar{y} \) $ are the means of $ \( X \) $ and $ \( y \) $.
+where \( X_i \) and \( y_i \) are individual values from the independent and dependent variable data, and \( \bar{X} \) and \( \bar{y} \) are the means of \( X \) and \( y \).
+
 
 #### Intercept Calculation (\( c \))
 
