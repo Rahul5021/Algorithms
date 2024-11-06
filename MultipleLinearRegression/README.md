@@ -82,5 +82,5 @@ print("Predictions:", y_pred)
 - `intercept_` : The intercept $b_0$ in the regression equation.
 - `coef_` : The coefficients $b_1, b_2, \dots, b_n$ for each feature in the model.
 
-### License
+## License
 This implementation is provided for educational purposes and is licensed under the MIT License.
