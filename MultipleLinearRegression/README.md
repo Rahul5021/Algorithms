@@ -44,8 +44,43 @@ The `MultipleLinearRegression` class has two primary methods:
 
 - Python 3
 - NumPy
+- Sklearn
 
 To install the required libraries, run:
 
 ```bash
-pip install numpy
+pip install library_name
+```
+Replace `library_name` with the actual library name.
+
+### Example Code
+
+Below is an example demonstrating how to use the `MultipleLinearRegression` class in Python.
+
+```python
+import numpy as np
+from MultipleLinearRegression import MultipleLinearRegression
+
+# Sample training data
+X_train = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])
+y_train = np.array([5, 7, 9, 11])
+
+# Initialize the model
+model = MultipleLinearRegression()
+
+# Fit the model on the training data
+model.fit(X_train, y_train)
+
+# Sample test data
+X_test = np.array([[5, 6], [6, 7]])
+y_pred = model.predict(X_test)
+
+# Output predictions
+print("Predictions:", y_pred)
+```
+### Explanation of Attributes
+`intercept_` : The intercept $b_0$ in the regression equation.
+`coef_` : The coefficients $b_1, b_2, \dots, b_n$ for each feature in the model.
+
+### License
+This implementation is provided for educational purposes and is licensed under the MIT License.
