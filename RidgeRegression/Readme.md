@@ -89,3 +89,16 @@ y_pred = model.predict(X_test)
 # Output predictions
 print("Predictions:", y_pred)
 ```
+
+### Explanation of Attributes
+
+- **intercept_**: The intercept $b_0$ in the regression equation.  
+- **coef_**: The coefficients $b_1, b_2, \dots, b_n$ for each feature in the model.
+
+### Tuning the Regularization Parameter
+
+The strength of regularization is controlled by the parameter $\lambda$ (referred to as `alpha` in the code). A higher value of `alpha` increases regularization, shrinking the coefficients closer to zero. Tuning `alpha` is essential to balance bias and variance for optimal performance.
+
+## License
+
+This implementation is provided for educational purposes and is licensed under the MIT License.
