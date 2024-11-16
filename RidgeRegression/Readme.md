@@ -25,7 +25,7 @@ where:
 Ridge Regression minimizes the following loss function:
 
 $$
-J\beta = \sum_{i=1}^{m} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{n} b_j^2
+J \beta = \sum_{i=1}^{m} \left( y_i - \hat{y}_i \right)^2 + \lambda \sum_{j=1}^{n} b_j^2
 $$
 
 where:
