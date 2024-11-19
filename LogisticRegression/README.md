@@ -1,10 +1,10 @@
 # Logistic Regression
 
-This folder contains a simple implementation of Logistic Regression, a classification algorithm used to model the probability of a binary outcome based on one or more independent variables.
+This folder contains a simple implementation of Logistic Regression using gradient descent, modeled through a custom function. This function calculates the optimal weights for a logistic regression model to classify binary outcomes based on one or more independent variables.
 
 ## Overview
 
-Logistic Regression is a statistical method for binary classification. Instead of predicting a continuous outcome like linear regression, logistic regression predicts the probability of the target belonging to a particular class. It is based on the logistic (sigmoid) function, which maps any real-valued number into the range [0, 1].
+Logistic Regression is a classification algorithm that models the probability of a binary outcome. It uses the logistic (sigmoid) function to map linear combinations of features into a range of probabilities [0, 1]. Predictions are made by applying a threshold to these probabilities.
 
 ### Model Equation
 
@@ -20,32 +20,45 @@ where:
 - $b_0$: Intercept term
 - $b_1, b_2, \dots, b_n$: Coefficients of the model for each feature
 
-The predicted class is determined by applying a threshold (e.g., 0.5) to the predicted probability.
+### Gradient Descent
 
-### Cost Function
-
-Logistic Regression minimizes the **Log Loss**:
+The `gradient` function uses **Gradient Descent** to optimize the weights. The weights are updated iteratively using the following rule:
 
 $$
-J(\beta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y_i \log(h_\beta(x_i)) + (1 - y_i) \log(1 - h_\beta(x_i)) \right]
+\beta_j = \beta_j + \alpha \frac{1}{m} \sum_{i=1}^{m} \left(y_i - h_\beta(x_i)\right) x_{ij}
 $$
 
 where:
-- $m$: Number of samples
-- $h_\beta(x_i)$: Predicted probability for sample $i$
-- $y_i$: Actual class label (0 or 1) for sample $i$
-
-### Optimization
-
-The coefficients $\beta$ are optimized using **Gradient Descent**:
-
-$$
-\beta_j = \beta_j - \alpha \frac{\partial J(\beta)}{\partial \beta_j}
-$$
-
-where:
+- $\beta_j$: Current weight for feature $j$
 - $\alpha$: Learning rate
-- $\frac{\partial J(\beta)}{\partial \beta_j}$: Partial derivative of the cost function with respect to $\beta_j$
+- $h_\beta(x_i)$: Predicted probability for sample $i$
+- $y_i$: Actual label (0 or 1) for sample $i$
+- $x_{ij}$: Value of feature $j$ for sample $i$
+- $m$: Total number of samples
+
+## Functions
+
+The implementation consists of two functions:
+
+### `gradient(X, y)`
+This function performs logistic regression using gradient descent and returns the model weights.
+
+#### Parameters:
+- `X`: A 2D NumPy array of input features.
+- `y`: A 1D NumPy array of target labels (binary: 0 or 1).
+
+#### Returns:
+- `weights[0]`: Intercept term ($b_0$).
+- `weights[1:]`: Coefficients ($b_1, b_2, \dots, b_n$) for each feature.
+
+### `sigmoid(z)`
+This helper function calculates the sigmoid of the input, mapping it to the range [0, 1].
+
+#### Parameters:
+- `z`: A NumPy array or scalar input.
+
+#### Returns:
+- Sigmoid transformation of `z`.
 
 ## Usage
 
@@ -55,12 +68,29 @@ where:
 - NumPy
 - Sklearn
 
-To install the required libraries, run:
+To install the required library, run:
 
 ```bash
 pip install library_name
 ```
 Replace `library_name` with the actual library name.
+
+### Example Code:
+
+Here’s an example of how to use the `gradient` function:
+
+```bash
+# Sample training data
+X_train = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])
+y_train = np.array([0, 0, 1, 1])  # Binary labels
+
+# Train the model
+intercept, coefficients = gradient(X_train, y_train)
+
+# Display results
+print("Intercept:", intercept)
+print("Coefficients:", coefficients)
+```
 
 ## Applications:
 
