@@ -47,13 +47,6 @@ where:
 - $\alpha$: Learning rate
 - $\frac{\partial J(\beta)}{\partial \beta_j}$: Partial derivative of the cost function with respect to $\beta_j$
 
-## Class Contents
-
-The `LogisticRegression` class has two primary methods:
-- **fit(X_train, y_train)**: Trains the model by optimizing the coefficients using gradient descent.
-- **predict(X_test)**: Predicts class labels for the given input data.
-- **predict_proba(X_test)**: Outputs probabilities for each class.
-
 ## Usage
 
 ### Requirements
@@ -66,3 +59,15 @@ To install the required libraries, run:
 
 ```bash
 pip install library_name
+```
+Replace `library_name` with the actual library name.
+
+## Applications:
+
+Logistic Regression is widely used for:
+- Binary classification tasks such as spam detection, disease prediction, or fraud detection.
+- Estimating probabilities for events in various domains.
+
+## License:
+
+This implementation is provided for educational purposes and is licensed under the MIT License.
